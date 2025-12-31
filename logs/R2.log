@@ -1,0 +1,27 @@
+R1 terminé
+
+ Connexion à R2
+                  R2 – Interfaces                   
+┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━┓
+┃ Interface       ┃ IP         ┃ Status ┃ Protocol ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━┩
+│ FastEthernet0/0 │ 10.10.10.2 │ up     │ up       │
+│ FastEthernet1/0 │ unassigned │ down   │ down     │
+│ FastEthernet2/0 │ unassigned │ up     │ up       │
+│ FastEthernet3/0 │ unassigned │ down   │ down     │
+└─────────────────┴────────────┴────────┴──────────┘
+ OSPF voisins :
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   2WAY/DROTHER    00:00:38    10.10.10.1      FastEthernet0/0
+3.3.3.3           1   2WAY/DROTHER    00:00:39    10.10.10.3      FastEthernet0/0
+4.4.4.4           1   2WAY/DROTHER    00:00:38    10.10.10.4      FastEthernet0/0
+5.5.5.5           1   2WAY/DROTHER    00:00:37    10.10.10.5      FastEthernet0/0
+6.6.6.6           1   FULL/BDR        00:00:39    10.10.10.6      FastEthernet0/0
+7.7.7.7           1   FULL/DR         00:00:32    10.10.10.7      FastEthernet0/0
+ Résultat du ping :
+
+Type escape sequence to abort.
+Sending 3, 100-byte ICMP Echos to 10.10.20.9, timeout is 2 seconds:
+!!!
+Success rate is 100 percent (3/3), round-trip min/avg/max = 68/89/108 ms

@@ -1,0 +1,22 @@
+=== INTERFACES ===
+Interface                  IP-Address      OK? Method Status                Protocol
+FastEthernet0/0            10.10.20.11     YES NVRAM  up                    up      
+FastEthernet1/0            unassigned      YES NVRAM  administratively down down    
+FastEthernet2/0            unassigned      YES NVRAM  administratively down down    
+
+FastEthernet3/0            unassigned      YES NVRAM  administratively down down    
+
+=== OSPF NEIGHBORS ===
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+8.8.8.8           1   2WAY/DROTHER    00:00:30    10.10.20.8      FastEthernet0/0
+9.9.9.9           1   2WAY/DROTHER    00:00:31    10.10.20.9      FastEthernet0/0
+12.12.12.12       1   2WAY/DROTHER    00:00:34    10.10.20.12     FastEthernet0/0
+13.13.13.13       1   FULL/BDR        00:00:34    10.10.20.13     FastEthernet0/0
+14.14.14.14       1   FULL/DR         00:00:34    10.10.20.14     FastEthernet0/0
+22.22.22.10       1   2WAY/DROTHER    00:00:35    10.10.20.10     FastEthernet0/0
+
+=== OSPF ROUTES ===
+     10.0.0.0/8 is variably subnetted, 3 subnets, 2 masks
+O       10.10.10.0/24 [110/3] via 10.10.20.8, 00:02:30, FastEthernet0/0
+O       10.10.30.0/30 [110/2] via 10.10.20.8, 00:02:30, FastEthernet0/0

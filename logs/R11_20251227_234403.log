@@ -1,0 +1,397 @@
+Connected to Dynamips VM "R11" (ID 11, type c3600) - Console port
+Press ENTER to get the prompt.
+-CONFIG_I: Configured from memory by console
+*Mar  1 00:00:04.703: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, 3600 Software (C3640-JK9S-M), Version 12.4(16), RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2007 by Cisco Systems, Inc.
+Compiled Wed 20-Jun-07 11:43 by prod_rel_team
+*Mar  1 00:00:04.723: %SNMP-5-COLDSTART: SNMP agent on host R11 is undergoing a cold start
+*Mar  1 00:00:04.875: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+*Mar  1 00:00:04.875: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet1/0, changed state to down
+*Mar  1 00:00:04.875: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet2/0, changed state to down
+*Mar  1 00:00:04.879: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet3/0, changed state to down
+*Mar  1 00:00:05.855: %LINK-5-CHANGED: Interface FastEthernet1/0, changed state to ********istratively down
+*Mar  1 00:00:05.879: %LINK-5-CHANGED: Interface FastEthernet2/0, changed state to ********istratively down
+*Mar  1 00:00:05.899: %LINK-5-CHANGED: Interface FastEthernet3/0, changed state to ********istratively down
+*Mar  1 00:00:49.395: %OSPF-5-ADJCHG: Process 1, Nbr 14.14.14.14 on FastEthernet0/0 from LOADING to FULL, Loading Done
+*Mar  1 00:00:49.395: %OSPF-5-ADJCHG: Process 1, Nbr 13.13.13.13 on FastEthernet0/0 from LOADING to FULL, Loading Done
+R11#
+R11#terminal width 511
+R11#terminal length 0
+R11#
+R11#
+R11#show running-config
+Building configuration...
+
+Current configuration : 1094 bytes
+!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R11
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+memory-size iomem 5
+no ip icmp rate-limit unreachable
+!
+!
+ip cef
+no ip domain lookup
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip tcp synwait-time 5
+! 
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 10.10.20.11 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface FastEthernet1/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface FastEthernet2/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface FastEthernet3/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+router ospf 1
+ router-id 11.11.11.11
+ log-adjacency-changes
+ network 10.10.10.0 0.0.0.255 area 0
+ network 10.10.20.0 0.0.0.255 area 0
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+no cdp log mismatch duplex
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+!
+!
+end
+
+R11#show ip route
+Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     10.0.0.0/24 is subnetted, 1 subnets
+C       10.10.20.0 is directly connected, FastEthernet0/0
+R11#show ip ospf neighbor
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+10.10.20.9        1   2WAY/DROTHER    00:00:30    10.10.20.9      FastEthernet0/0
+12.12.12.12       1   2WAY/DROTHER    00:00:31    10.10.20.12     FastEthernet0/0
+13.13.13.13       1   FULL/BDR        00:00:32    10.10.20.13     FastEthernet0/0
+14.14.14.14       1   FULL/DR         00:00:34    10.10.20.14     FastEthernet0/0
+R11#
+R11#exit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R11 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R11#
+R11#terminal width 511
+R11#terminal length 0
+R11#
+R11#
+
+R11#terminal length 0
+R11#terminal width 0
+R11#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R11(config)#router ospf 1
+R11(config-router)#router-id 11.11.11.11
+R11(config-router)#network 10.10.20.0 0.0.0.255 area 0
+R11(config-router)#end
+R11#
+*Mar  1 00:57:30.927: %SYS-5-CONFIG_I: Configured from console by console
+R11#wr mem
+Building configuration...
+[OK]
+R11#show clock
+*00:57:39.535 UTC Fri Mar 1 2002
+R11#show running-config
+Building configuration...
+
+Current configuration : 1094 bytes
+!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R11
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+memory-size iomem 5
+no ip icmp rate-limit unreachable
+!
+!
+ip cef
+no ip domain lookup
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip tcp synwait-time 5
+! 
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 10.10.20.11 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface FastEthernet1/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface FastEthernet2/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface FastEthernet3/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+router ospf 1
+ router-id 11.11.11.11
+ log-adjacency-changes
+ network 10.10.10.0 0.0.0.255 area 0
+ network 10.10.20.0 0.0.0.255 area 0
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+no cdp log mismatch duplex
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+!
+!
+end
+
+R11#show ip route
+Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     10.0.0.0/24 is subnetted, 1 subnets
+C       10.10.20.0 is directly connected, FastEthernet0/0
+R11#show ip ospf neighbor
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+10.10.20.9        1   2WAY/DROTHER    00:00:35    10.10.20.9      FastEthernet0/0
+12.12.12.12       1   2WAY/DROTHER    00:00:36    10.10.20.12     FastEthernet0/0
+13.13.13.13       1   FULL/BDR        00:00:37    10.10.20.13     FastEthernet0/0
+14.14.14.14       1   FULL/DR         00:00:39    10.10.20.14     FastEthernet0/0
+R11#show ip interface brief
+Interface                  IP-Address      OK? Method Status                Protocol
+FastEthernet0/0            10.10.20.11     YES NVRAM  up                    up      
+FastEthernet1/0            unassigned      YES NVRAM  ********istratively down down    
+FastEthernet2/0            unassigned      YES NVRAM  ********istratively down down    
+
+FastEthernet3/0            unassigned      YES NVRAM  ********istratively down down    
+R11#
+R11#exit

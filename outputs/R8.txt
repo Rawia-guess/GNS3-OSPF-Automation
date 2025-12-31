@@ -1,0 +1,34 @@
+=== INTERFACES ===
+Interface                  IP-Address      OK? Method Status                Protocol
+FastEthernet0/0            10.10.20.8      YES NVRAM  up                    up      
+FastEthernet1/0            10.10.30.2      YES NVRAM  up                    up      
+FastEthernet2/0            unassigned      YES NVRAM  administratively down down    
+
+Serial3/0                  unassigned      YES NVRAM  administratively down down    
+Serial3/1                  unassigned      YES NVRAM  administratively down down    
+Serial3/2                  unassigned      YES NVRAM  administratively down down    
+Serial3/3                  unassigned      YES NVRAM  administratively down down    
+
+=== OSPF NEIGHBORS ===
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+7.7.7.7           1   FULL/DR         00:00:38    10.10.30.1      FastEthernet1/0
+9.9.9.9           1   2WAY/DROTHER    00:00:35    10.10.20.9      FastEthernet0/0
+11.11.11.11       1   2WAY/DROTHER    00:00:36    10.10.20.11     FastEthernet0/0
+12.12.12.12       1   2WAY/DROTHER    00:00:36    10.10.20.12     FastEthernet0/0
+13.13.13.13       1   2WAY/DROTHER    00:00:37    10.10.20.13     FastEthernet0/0
+14.14.14.14       1   FULL/BDR        00:00:38    10.10.20.14     FastEthernet0/0
+
+22.22.22.10       1   FULL/DR         00:00:36    10.10.20.10     FastEthernet0/0
+
+=== OSPF ROUTES ===
+     10.0.0.0/8 is variably subnetted, 3 subnets, 2 masks
+O       10.10.10.0/24 [110/2] via 10.10.30.1, 01:05:22, FastEthernet1/0
+
+=== PING TEST ===
+
+Type escape sequence to abort.
+Sending 3, 100-byte ICMP Echos to 10.10.30.2, timeout is 2 seconds:
+
+!!!
+Success rate is 100 percent (3/3), round-trip min/avg/max = 4/4/4 ms

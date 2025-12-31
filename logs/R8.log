@@ -1,0 +1,33 @@
+✅ R7 terminé
+
+🚀 Connexion à R8
+                  R8 – Interfaces                   
+┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━┓
+┃ Interface       ┃ IP         ┃ Status ┃ Protocol ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━┩
+│ FastEthernet0/0 │ 10.10.20.8 │ up     │ up       │
+│ FastEthernet1/0 │ 10.10.30.2 │ up     │ up       │
+│ FastEthernet2/0 │ unassigned │ down   │ down     │
+│ Serial3/0       │ unassigned │ down   │ down     │
+│ Serial3/1       │ unassigned │ down   │ down     │
+│ Serial3/2       │ unassigned │ down   │ down     │
+│ Serial3/3       │ unassigned │ down   │ down     │
+└─────────────────┴────────────┴────────┴──────────┘
+🧠 OSPF voisins :
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+7.7.7.7           1   FULL/DR         00:00:38    10.10.30.1      FastEthernet1/0
+9.9.9.9           1   2WAY/DROTHER    00:00:35    10.10.20.9      FastEthernet0/0
+11.11.11.11       1   2WAY/DROTHER    00:00:36    10.10.20.11     FastEthernet0/0
+12.12.12.12       1   2WAY/DROTHER    00:00:36    10.10.20.12     FastEthernet0/0
+13.13.13.13       1   2WAY/DROTHER    00:00:37    10.10.20.13     FastEthernet0/0
+14.14.14.14       1   FULL/BDR        00:00:38    10.10.20.14     FastEthernet0/0
+
+22.22.22.10       1   FULL/DR         00:00:36    10.10.20.10     FastEthernet0/0
+📡 Résultat du ping :
+
+Type escape sequence to abort.
+Sending 3, 100-byte ICMP Echos to 10.10.30.2, timeout is 2 seconds:
+
+!!!
+Success rate is 100 percent (3/3), round-trip min/avg/max = 4/4/4 ms

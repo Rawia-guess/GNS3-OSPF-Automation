@@ -1,0 +1,29 @@
+✅ R13 terminé
+
+🚀 Connexion à R14
+                  R14 – Interfaces                   
+┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━┓
+┃ Interface       ┃ IP          ┃ Status ┃ Protocol ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━┩
+│ FastEthernet0/0 │ 10.10.20.14 │ up     │ up       │
+│ FastEthernet1/0 │ unassigned  │ down   │ down     │
+│ FastEthernet2/0 │ unassigned  │ down   │ down     │
+│ FastEthernet3/0 │ unassigned  │ down   │ down     │
+└─────────────────┴─────────────┴────────┴──────────┘
+🧠 OSPF voisins :
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+8.8.8.8           1   FULL/DROTHER    00:00:33    10.10.20.8      FastEthernet0/0
+9.9.9.9           1   FULL/DROTHER    00:00:30    10.10.20.9      FastEthernet0/0
+11.11.11.11       1   FULL/DROTHER    00:00:30    10.10.20.11     FastEthernet0/0
+12.12.12.12       1   FULL/DROTHER    00:00:30    10.10.20.12     FastEthernet0/0
+13.13.13.13       1   FULL/DROTHER    00:00:31    10.10.20.13     FastEthernet0/0
+22.22.22.10       1   FULL/DR         00:00:30    10.10.20.10     FastEthernet0/0
+
+📡 Résultat du ping :
+
+Type escape sequence to abort.
+Sending 3, 100-byte ICMP Echos to 10.10.10.1, timeout is 2 seconds:
+
+!!!
+Success rate is 100 percent (3/3), round-trip min/avg/max = 96/100/104 ms
